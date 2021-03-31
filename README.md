@@ -23,6 +23,52 @@ Any merge/pull requests or issues on any repository are welcomed.
 ```
 
 
+## Install
+
+```zsh
+% cargo install heks
+```
+
+
+## Usage
+
+TODO
+
+
+## Development
+
+### Verify
+
+```zsh
+# check code using all verify:xxx targets
+% make verify:all
+```
+
+See `make help`.
+
+### Test
+
+```zsh
+% make test
+```
+
+### CI
+
+Run CI jobs on a docker conatiner (`grauwoelfchen/rust:stable`, Gentoo Linux)
+using gitlab-runner. See `.gitlab-ci.yml`.
+
+```zsh
+# install gitlab-runner into .tools
+% .tool/setup-gitlab-runner
+
+# prepare environment variables for CI via .env.ci
+% cp .env.ci.sample .env
+
+# e.g. test (see .gitlab-ci.yml)
+% .tool/ci-runner test
+```
+
+
 ## License
 
 `GPL-3.0-or-later`
