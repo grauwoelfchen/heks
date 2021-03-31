@@ -1,5 +1,14 @@
 # Heks
 
+[![pipeline](
+https://gitlab.com/grauwoelfchen/heks/badges/trunk/pipeline.svg)](
+https://gitlab.com/grauwoelfchen/heks/commits/trunk) [![coverage](
+https://gitlab.com/grauwoelfchen/heks/badges/trunk/coverage.svg)](
+https://gitlab.com/grauwoelfchen/heks/commits/trunk) [![crate::heks](
+https://img.shields.io/crates/v/heks?label=crates&style=flat)](
+https://crates.io/crates/heks) [![doc::heks](
+https://docs.rs/heks/badge.svg)](https://docs.rs/crate/heks)
+
 A lib/tool exchanges hexadecimal color input.
 
 
