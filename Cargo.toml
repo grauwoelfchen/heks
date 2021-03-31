@@ -1,9 +1,40 @@
 [package]
 name = "heks"
-version = "0.1.0"
+description = """\
+A lib/tool exchanges hexadecimal color input
+"""
+version = "0.0.1"
 authors = ["Yasuhiro Яша Asaka <yasuhiro.asaka@grauwoelfchen.net>"]
 edition = "2018"
+homepage = "https://gitlab.com/grauwoelfchen/heks"
+readme = "README.md"
+keywords = []
+categories = [
+  "command-line-utilities",
+]
+documentation = "https://docs.rs/crate/heks"
+repository = "https://gitlab.com/grauwoelfchen/heks"
+license = "GPL-3.0-or-later"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+exclude = [
+  "doc",
+  ".cargo-husky",
+  ".tool",
+  "Makefile",
+  "rust-toolchain",
+  ".env*",
+  ".gitignore",
+  ".clippy.toml",
+  ".rustfmt.toml",
+  ".gitlab-ci.yml",
+]
 
 [dependencies]
+
+[badges]
+gitlab = { repository = "grauwoelfchen/heks", branch = "trunk" }
+
+[dev-dependencies.cargo-husky]
+version = "1"
+default-features = false
+features = ["user-hooks"]
