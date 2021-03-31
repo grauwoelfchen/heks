@@ -30,6 +30,8 @@ exclude = [
 ]
 
 [dependencies]
+nom = "^6.1"
+rustyline = "8.0.0"
 
 [badges]
 gitlab = { repository = "grauwoelfchen/heks", branch = "trunk" }

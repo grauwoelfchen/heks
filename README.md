@@ -32,7 +32,18 @@ Any merge/pull requests or issues on any repository are welcomed.
 
 ## Usage
 
-TODO
+### REPL
+
+```zsh
+% heks
+> t
+invalid value is given
+> 888888
+r: 136 g: 136 b: 136
+> #222222
+r: 34 g: 34 b: 34
+>
+```
 
 
 ## Development
