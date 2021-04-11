@@ -9,7 +9,7 @@ https://img.shields.io/crates/v/heks?label=crates&style=flat)](
 https://crates.io/crates/heks) [![doc::heks](
 https://docs.rs/heks/badge.svg)](https://docs.rs/crate/heks)
 
-A lib/tool exchanges hexadecimal color input.
+A lib/tool exchanges hexadecimal colour input.
 
 
 ## Repositories
@@ -48,9 +48,9 @@ Any merge/pull requests or issues on any repository are welcomed.
 > t
 invalid value is given
 > 888888
-r: 136 g: 136 b: 136
+rgb(136, 136, 136)
 > #222222
-r: 34 g: 34 b: 34
+rgb(34, 34, 34)
 >
 ```
 

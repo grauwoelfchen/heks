@@ -54,9 +54,9 @@ fn main() {
             Ok(line) => {
                 let hex = with_tag(&line);
                 if let Ok((_, c)) = parse_hex_color(&hex) {
-                    println!("r: {} g: {} b: {}", c.r, c.g, c.b);
+                    println!("rgb({}, {}, {})", c.r, c.g, c.b);
                 } else {
-                    println!("invalid value is given");
+                    println!("err: invalid value is given");
                 }
             }
             _ => break,
