@@ -99,4 +99,5 @@ pages:
     paths:
       - public
   only:
+    - tags
     - trunk
