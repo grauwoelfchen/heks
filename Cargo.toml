@@ -29,14 +29,17 @@ exclude = [
   ".gitlab-ci.yml",
 ]
 
+[badges]
+gitlab = { repository = "grauwoelfchen/heks", branch = "trunk" }
+
 [dependencies]
 nom = "^6.1"
 rustyline = "8.0.0"
-
-[badges]
-gitlab = { repository = "grauwoelfchen/heks", branch = "trunk" }
 
 [dev-dependencies.cargo-husky]
 version = "1"
 default-features = false
 features = ["user-hooks"]
+
+[profile.release]
+panic = "abort"
