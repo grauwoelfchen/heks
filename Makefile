@@ -2,14 +2,14 @@ PACKAGE = heks
 BINARY = heks
 
 # verify
-verify\:check:  ## Verify code syntax [alias: check]
+verify\:check: ## Verify code syntax [alias: check]
 	@cargo check --all --verbose
 .PHONY: verify\:check
 
 check: verify\:check
 .PHONY: check
 
-verify\:format:  ## Verify format without changes [alias: verify:fmt, format, fmt]
+verify\:format: ## Verify format without changes [alias: verify:fmt, format, fmt]
 	@cargo fmt --all -- --check
 .PHONY: verify\:format
 
@@ -19,29 +19,29 @@ format: verify\:format
 fmt: verify\:format
 .PHONY: fmt
 
-verify\:lint:  ## Verify coding style using clippy [alias: lint]
+verify\:lint: ## Verify coding style using clippy [alias: lint]
 	@cargo clippy --all-targets
 .PHONY: verify\:lint
 
 lint: verify\:lint
 .PHONY: lint
 
-verify\:all: verify\:check verify\:format verify\:lint  ## Check code using all verify:xxx targets [alias: verify]
+verify\:all: verify\:check verify\:format verify\:lint ## Check code using all verify targets
 .PHONY: verify\:all
 
-verify: verify\:all
+verify: verify\:check ## Synonym for verify:check
 .PHONY: verify
 
 # test
-test\:all:  ## Run all unit tests
+test\:all: ## Run all unit tests
 	@cargo test --tests
 .PHONY: test\:all
 
-test: test\:all  ## Synonym for test:all
+test: test\:all ## Synonym for test:all
 .PHONY: test
 
 # coverage
-coverage\:bin:  ## Generate a coverage report of tests for binary [alias: cov:bin]
+coverage\:bin: ## Generate a coverage report of tests for binary [alias: cov:bin]
 	@set -uo pipefail; \
 	dir="$$(pwd)"; \
 	target_dir="$${dir}/target/coverage/bin"; \
@@ -60,35 +60,38 @@ coverage\:bin:  ## Generate a coverage report of tests for binary [alias: cov:bi
 cov\:bin: coverage\:bin
 .PHONY: cov\:bin
 
-coverage: coverage\:bin  ## Synonym for coverage:lib [alias: cov]
+coverage: coverage\:bin ## Synonym for coverage:lib [alias: cov]
 .PHONY: coverage
 
+cov: coverage
+.PHONY: cov
+
 # build
-build\:debug:  ## Build in debug mode [alias: build]
+build\:debug: ## Build in debug mode
 	cargo build
 .PHONY: build\:debug
 
-build: build\:debug
+build: build\:debug ## Synonym for build:debug
 .PHONY: build
 
-build\:release:  ## Create release build
+build\:release: ## Build in release mode
 	cargo build --release
 .PHONY: build\:release
 
 # utility
-clean:  ## Clean up
+clean: ## Clean up
 	@cargo clean
 .PHONY: clean
 
-package:  ## Create package
+package: ## Create package
 	@cargo package
 .PHONY: package
 
-publish:  ## Publish package
+publish: ## Publish package
 	@cargo publish
 .PHONY: publish
 
-install:  ## Install a debug target into the directory same with cargo
+install: ## Install a debug target into the directory same with cargo
 	@cargo install --debug --path . --force
 .PHONY: install
 
@@ -110,7 +113,7 @@ runner-%: ## Run a CI job on local (on Docker)
 		$${opt} $${job}
 .PHONY: runner
 
-help:  ## Display this message
+help: ## Display this message
 	@set -uo pipefail; \
 	grep --extended-regexp '^[-_0-9a-z\%\:\\ ]+: ' \
 		$(firstword $(MAKEFILE_LIST)) | \
