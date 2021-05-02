@@ -78,14 +78,11 @@ Run CI jobs on a docker conatiner (`grauwoelfchen/rust:stable`, Gentoo Linux)
 using gitlab-runner. See `.gitlab-ci.yml`.
 
 ```zsh
-# install gitlab-runner into .tools
-% .tool/setup-gitlab-runner
-
 # prepare environment variables for CI via .env.ci
 % cp .env.ci.sample .env
 
 # e.g. test (see .gitlab-ci.yml)
-% .tool/ci-runner test
+% make runner-test
 ```
 
 
